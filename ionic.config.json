@@ -1,0 +1,7 @@
+{
+  "name": "password-password",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
