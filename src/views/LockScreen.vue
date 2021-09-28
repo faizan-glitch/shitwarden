@@ -23,6 +23,8 @@
             <ion-input type="number"></ion-input>
           </ion-item>
 
+          <ion-button @click="navigateToTabs">Login with PIN</ion-button>
+
           <ion-button @click="authenticateWithFingerprint"
             >Login with Fingerprint</ion-button
           >
@@ -96,6 +98,9 @@ export default {
           } else console.error(error);
         });
     },
+    navigateToTabs() {
+      this.$router.push('/tabs/vault')
+    }
   },
 };
 </script>

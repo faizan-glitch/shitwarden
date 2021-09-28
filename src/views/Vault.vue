@@ -11,18 +11,36 @@
           <ion-title size="large">Vault</ion-title>
         </ion-toolbar>
       </ion-header>
-    
-      <ExploreContainer name="Vault" />
+      <categories-my-vault/>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import {
+  IonPage,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  // IonBackButton,
+  // IonButtons,
+} from "@ionic/vue";
+import CategoriesMyVault from '@/components/CategoriesMyVault.vue';
+// import ExploreContainer from "@/components/ExploreContainer.vue";
 
-export default  {
-  name: 'Vault',
-  components: { ExploreContainer, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
-}
+export default {
+  name: "Vault",
+  components: {
+    // ExploreContainer,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    // IonBackButton,
+    // IonButtons,
+    IonPage,
+    CategoriesMyVault,
+  },
+};
 </script>

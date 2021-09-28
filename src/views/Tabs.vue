@@ -15,7 +15,7 @@
         </ion-tab-button>
         
         <ion-tab-button tab="settings" href="/tabs/settings">
-          <ion-icon :icon="square" />
+          <ion-icon :icon="settingsOutline" />
           <ion-label>Settings</ion-label>
         </ion-tab-button>
       </ion-tab-bar>
