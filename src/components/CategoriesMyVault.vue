@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <ion-text>Categories</ion-text> -->
+    <h4 class="ion-margin">Categories</h4>
     <!-- eslint-disable -->
 
     <ion-list>
@@ -25,16 +25,44 @@
         <ion-label>Secure Notes</ion-label>
       </ion-item>
     </ion-list>
+
+    <h4 class="ion-margin">Uncategorized</h4>
+
+    <ion-list>
+      <ion-item v-for="item in items" :key="item">
+        <ion-icon slot="start" :icon="earthOutline"></ion-icon>
+        <ion-col>
+          <ion-label class="small-margin-bottom">Application Name</ion-label>
+          <ion-label color="medium">Credentials</ion-label>
+        </ion-col>
+        <ion-icon :icon="openOutline" class="ion-margin-start"></ion-icon>
+        <ion-icon
+          :icon="personCircleOutline"
+          class="ion-margin-start"
+        ></ion-icon>
+        <ion-icon :icon="keyOutline" class="ion-margin-start"></ion-icon>
+      </ion-item>
+    </ion-list>
   </div>
 </template>
 
 <script>
-import { IonList, IonItem, IonLabel, IonIcon, IonBadge } from "@ionic/vue";
+import {
+  IonList,
+  IonItem,
+  IonLabel,
+  IonIcon,
+  IonBadge,
+  IonCol,
+} from "@ionic/vue";
 import {
   earthOutline,
   cardOutline,
   idCardOutline,
   documentOutline,
+  openOutline,
+  personCircleOutline,
+  keyOutline,
 } from "ionicons/icons";
 
 export default {
@@ -45,6 +73,7 @@ export default {
     IonLabel,
     IonIcon,
     IonBadge,
+    IonCol,
   },
   data() {
     return {
@@ -52,10 +81,20 @@ export default {
       cardOutline,
       idCardOutline,
       documentOutline,
+      openOutline,
+      personCircleOutline,
+      keyOutline,
+      items: [1, 2, 3, 4],
     };
   },
 };
 </script>
 
 <style>
+.small-margin-bottom {
+  margin-bottom: 5px;
+}
+.text-muted {
+  color: #2e2e2e;
+}
 </style>

@@ -12,17 +12,17 @@
         </ion-toolbar>
       </ion-header>
       
-      <ExploreContainer name="Generator page" />
+      <password-generator> </password-generator>
     </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/vue';
-import ExploreContainer from '@/components/ExploreContainer.vue';
+import PasswordGenerator from '@/components/PasswordGenerator.vue'
 
 export default  {
   name: 'Generator',
-  components: { ExploreContainer, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
+  components: { PasswordGenerator, IonHeader, IonToolbar, IonTitle, IonContent, IonPage }
 }
 </script>
