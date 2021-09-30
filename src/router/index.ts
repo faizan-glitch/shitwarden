@@ -26,7 +26,19 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'settings',
-        component: () => import('@/views/Settings.vue')
+        component: () => import('@/views/Settings.vue'),
+      },
+      {
+        path: 'folders',
+        component: () => import('@/views/FoldersSettings.vue'),
+      },
+      {
+        path: 'sync',
+        component: () => import('@/views/SyncSettings.vue'),
+      },
+      {
+        path: 'excluded-domains',
+        component: () => import('@/views/ExcludedDomainsSettings.vue'),
       }
     ]
   }
