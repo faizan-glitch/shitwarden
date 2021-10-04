@@ -1,8 +1,10 @@
 <template>
   <div>
-    <h4 class="ion-margin">Categories</h4>
     <!-- eslint-disable -->
 
+    <ion-list-header>
+      <ion-label color="medium">CATEGORIES</ion-label>
+    </ion-list-header>
     <ion-list>
       <ion-item :detail="true">
         <ion-icon slot="start" :icon="earthOutline"></ion-icon>
@@ -26,7 +28,9 @@
       </ion-item>
     </ion-list>
 
-    <h4 class="ion-margin">Uncategorized</h4>
+    <ion-list-header>
+      <ion-label color="medium">UNCATEGORIZED</ion-label>
+    </ion-list-header>
 
     <ion-list>
       <ion-item v-for="item in items" :key="item">
@@ -54,6 +58,7 @@ import {
   IonIcon,
   IonBadge,
   IonCol,
+  IonListHeader
 } from "@ionic/vue";
 import {
   earthOutline,
@@ -74,6 +79,7 @@ export default {
     IonIcon,
     IonBadge,
     IonCol,
+    IonListHeader
   },
   data() {
     return {

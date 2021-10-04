@@ -17,15 +17,15 @@
         <ion-label color="medium">MANAGE</ion-label>
       </ion-list-header>
       <ion-list>
-        <ion-item :detail="true" href="/tabs/folders">
+        <ion-item :detail="true" routerLink="/tabs/folders">
           <ion-label>Folders</ion-label>
         </ion-item>
 
-        <ion-item :detail="true" href="/tabs/sync">
+        <ion-item :detail="true" routerLink="/tabs/sync">
           <ion-label>Sync</ion-label>
         </ion-item>
 
-        <ion-item :detail="true" href="/tabs/excluded-domains">
+        <ion-item :detail="true" routerLink="/tabs/excluded-domains">
           <ion-label>Excluded Domains</ion-label>
         </ion-item>
       </ion-list>
@@ -136,9 +136,9 @@
         </ion-item>
       </ion-list>
 
-      <h5 class="ion-margin">
+      <!-- <h5 class="ion-margin">
         Please consider helping us out with a good review!
-      </h5>
+      </h5> -->
     </ion-content>
   </ion-page>
 </template>

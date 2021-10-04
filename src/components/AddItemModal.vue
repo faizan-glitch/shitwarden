@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, modalController } from '@ionic/vue';
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, modalController, IonButton } from '@ionic/vue';
 
 export default  {
   name: 'AddItemModal',
-  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage },
+  components: { IonHeader, IonToolbar, IonTitle, IonContent, IonPage, IonButton },
   methods: {
     async closeModal() {
       await modalController.dismiss()

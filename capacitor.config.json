@@ -1,6 +1,6 @@
 {
 	"appId": "io.ionic.starter",
-	"appName": "password-password",
+	"appName": "shitwarden",
 	"webDir": "dist",
 	"bundledWebRuntime": false
 }

@@ -2,11 +2,12 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-searchbar></ion-searchbar>
+        <ion-searchbar mode="ios" class="ion-margin-top"></ion-searchbar>
         <!-- eslint-disable -->
         <ion-buttons slot="end">
-          <ion-button @click="setOpen(true)">
-            <ion-icon :icon="addOutline" />
+          <ion-button @click="setOpen(true)" class="ion-margin-horizontal">
+            Add Item
+            <!-- <ion-icon :icon="addOutline" /> -->
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -32,7 +33,7 @@ import {
   IonToolbar,
   IonTitle,
   IonContent,
-  IonIcon,
+  // IonIcon,
   IonButton,
   IonButtons,
   IonSearchbar,
@@ -52,7 +53,7 @@ export default {
     IonToolbar,
     IonTitle,
     IonContent,
-    IonIcon,
+    // IonIcon,
     IonButton,
     IonButtons,
     IonSearchbar,
