@@ -6,8 +6,7 @@
         <!-- eslint-disable -->
         <ion-buttons slot="end">
           <ion-button @click="setOpen(true)" class="ion-margin-horizontal">
-            Add Item
-            <!-- <ion-icon :icon="addOutline" /> -->
+            <ion-icon :icon="addCircleOutline" />
           </ion-button>
         </ion-buttons>
       </ion-toolbar>
@@ -43,7 +42,7 @@ import CategoriesMyVault from "@/components/CategoriesMyVault.vue";
 import AddItemModal from "@/components/AddItemModal.vue";
 
 // import ExploreContainer from "@/components/ExploreContainer.vue";
-import { addOutline } from "ionicons/icons";
+import { addCircleOutline } from "ionicons/icons";
 
 export default {
   name: "Vault",
@@ -64,7 +63,7 @@ export default {
   },
   data() {
     return {
-      addOutline,
+      addCircleOutline,
       isOpenRef: false,
     };
   },
