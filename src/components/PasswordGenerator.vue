@@ -52,23 +52,21 @@
 
       <ion-item>
         <ion-label>A-Z</ion-label>
-        <ion-checkbox color="primary"></ion-checkbox>
+        <ion-checkbox color="primary" v-model="includeUpper"></ion-checkbox>
       </ion-item>
       <ion-item>
         <ion-label>a-z</ion-label>
-        <ion-checkbox color="primary"></ion-checkbox>
+        <ion-checkbox color="primary" v-model="includeLower"></ion-checkbox>
       </ion-item>
       <ion-item>
         <ion-label>0-9</ion-label>
-        <ion-checkbox color="primary"></ion-checkbox>
+        <ion-checkbox color="primary" v-model="includeDigits"></ion-checkbox>
       </ion-item>
       <ion-item>
         <ion-label>!@#$%^&*</ion-label>
-        <ion-checkbox color="primary"></ion-checkbox>
+        <ion-checkbox color="primary" v-model="includeSpecial"></ion-checkbox>
       </ion-item>
     </ion-list>
-
-    <!-- <ion-button @click="lengthChanged"> Generate Random Password</ion-button> -->
   </div>
 </template>
 
@@ -110,6 +108,10 @@ export default {
       documentOutline,
       length: 0,
       generatedRandomPassword: "",
+      includeUpper: true,
+      includeLower: true,
+      includeDigits: true,
+      includeSpecial: true
     };
   },
   methods: {
@@ -117,8 +119,19 @@ export default {
       this.generatedRandomPassword = this.getRandomString();
     },
     getRandomString() {
-      const randomChars =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      let randomChars = "";
+      if (this.includeUpper) {
+        randomChars = randomChars.concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+      }
+      if (this.includeLower) {
+        randomChars = randomChars.concat('abcdefghijklmnopqrstuvwxyz')
+      }
+      if (this.includeDigits) {
+        randomChars = randomChars.concat('0123456789')
+      }
+      if (this.includeSpecial) {
+        randomChars = randomChars.concat('!@#$%^&*()-+/*-')
+      }
       let result = "";
       for (let i = 0; i < this.length; i++) {
         result += randomChars.charAt(

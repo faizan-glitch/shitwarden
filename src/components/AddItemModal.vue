@@ -1,5 +1,6 @@
 <template>
   <ion-page>
+    <!-- eslint-disable -->
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
@@ -41,7 +42,7 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating" color="medium">Username</ion-label>
-          <ion-input v-model="itemuUername"></ion-input>
+          <ion-input v-model="itemUsername"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating" color="medium">Password</ion-label>
@@ -79,12 +80,12 @@
             <ion-label class="small-margin-bottom">URL</ion-label>
             <ion-label color="medium">Credentials</ion-label>
           </ion-col>
-          <ion-icon :icon="openOutline" class="ion-margin-start"></ion-icon>
-          <ion-icon
+          <!-- <ion-icon :icon="openOutline" class="ion-margin-start"></ion-icon> -->
+          <!-- <ion-icon
             :icon="personCircleOutline"
             class="ion-margin-start"
-          ></ion-icon>
-          <ion-icon :icon="keyOutline" class="ion-margin-start"></ion-icon>
+          ></ion-icon> -->
+          <!-- <ion-icon :icon="keyOutline" class="ion-margin-start"></ion-icon> -->
         </ion-item>
 
         <ion-item-divider></ion-item-divider>
