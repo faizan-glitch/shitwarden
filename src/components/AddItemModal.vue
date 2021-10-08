@@ -47,12 +47,8 @@
         <ion-item>
           <ion-label position="floating" color="medium">Password</ion-label>
           <ion-input v-model="itemPassword"></ion-input>
-          <ion-row class="ion-justify-content-around" style="width: 90%">
-            <ion-col size="1">
-              <ion-button>
-                <ion-icon :icon="checkmarkCircleOutline"></ion-icon>
-              </ion-button>
-            </ion-col>
+        </ion-item>
+         <ion-row class="ion-justify-content-around" style="width: 90%">
             <ion-col size="1">
               <ion-button>
                 <ion-icon :icon="eyeOffOutline"></ion-icon>
@@ -64,13 +60,6 @@
               </ion-button>
             </ion-col>
           </ion-row>
-        </ion-item>
-        <ion-item>
-          <ion-label position="floating" color="medium"
-            >Authenticator Key (TOTP)</ion-label
-          >
-          <ion-input v-model="itemAuthKey"></ion-input>
-        </ion-item>
 
         <ion-item-divider></ion-item-divider>
 
@@ -105,10 +94,6 @@
           <ion-checkbox color="primary"></ion-checkbox>
         </ion-item>
 
-        <ion-item>
-          <ion-label>Master password re-prompt</ion-label>
-          <ion-checkbox color="primary"></ion-checkbox>
-        </ion-item>
       </ion-list>
 
       <ion-list-header>
@@ -186,7 +171,6 @@ export default {
       itemName: "",
       itemUsername: "",
       itemPassword: "",
-      itemAuthKey: "",
       closeCircleOutline,
       checkmarkCircleOutline,
       eyeOffOutline,
