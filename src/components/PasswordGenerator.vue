@@ -12,7 +12,7 @@
           :value="generatedRandomPassword"
           :auto-grow="true"
           readonly
-          class="ion-text-center "
+          class="ion-text-center"
         ></ion-textarea>
       </ion-item>
 
@@ -20,7 +20,7 @@
         <ion-label>Regenerate Password</ion-label>
       </ion-item>
 
-      <ion-item button>
+      <ion-item button @click="copyToClipboard">
         <ion-label>Copy Password</ion-label>
         <!-- <ion-badge color="primary" class="ion-margin-end">69</ion-badge> -->
       </ion-item>
@@ -78,7 +78,7 @@ import {
   IonRange,
   IonCheckbox,
   IonItemDivider,
-  IonTextarea
+  IonTextarea,
 } from "@ionic/vue";
 import {
   earthOutline,
@@ -87,6 +87,7 @@ import {
   documentOutline,
 } from "ionicons/icons";
 
+import { Clipboard } from "@ionic-native/clipboard";
 export default {
   name: "PasswordGenerator",
   components: {
@@ -96,7 +97,7 @@ export default {
     IonRange,
     IonCheckbox,
     IonItemDivider,
-    IonTextarea
+    IonTextarea,
     // IonIcon,
     // IonBadge,
   },
@@ -111,26 +112,33 @@ export default {
       includeUpper: true,
       includeLower: true,
       includeDigits: true,
-      includeSpecial: true
+      includeSpecial: true,
     };
   },
   methods: {
+    async copyToClipboard() {
+      try {
+        await Clipboard.copy(this.generatedRandomPassword);
+      } catch (error) {
+        console.log(error);
+      }
+    },
     lengthChanged() {
       this.generatedRandomPassword = this.getRandomString();
     },
     getRandomString() {
       let randomChars = "";
       if (this.includeUpper) {
-        randomChars = randomChars.concat('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        randomChars = randomChars.concat("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
       }
       if (this.includeLower) {
-        randomChars = randomChars.concat('abcdefghijklmnopqrstuvwxyz')
+        randomChars = randomChars.concat("abcdefghijklmnopqrstuvwxyz");
       }
       if (this.includeDigits) {
-        randomChars = randomChars.concat('0123456789')
+        randomChars = randomChars.concat("0123456789");
       }
       if (this.includeSpecial) {
-        randomChars = randomChars.concat('!@#$%^&*()-+/*-')
+        randomChars = randomChars.concat("!@#$%^&*()-+/*-");
       }
       let result = "";
       for (let i = 0; i < this.length; i++) {
@@ -145,7 +153,6 @@ export default {
 </script>
 
 <style>
-
 .dark-bg {
   --background: #2e2e2e;
 }
