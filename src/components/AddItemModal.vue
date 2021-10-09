@@ -46,12 +46,12 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating" color="medium">Password</ion-label>
-          <ion-input v-model="itemPassword"></ion-input>
+          <ion-input v-model="itemPassword" :type="passwordType"></ion-input>
         </ion-item>
          <ion-row class="ion-justify-content-around" style="width: 90%">
             <ion-col size="1">
-              <ion-button>
-                <ion-icon :icon="eyeOffOutline"></ion-icon>
+              <ion-button @click="passwordType == 'password' ? passwordType = 'text': passwordType = 'password'">
+                <ion-icon :icon="passwordType == 'password' ? 'eyeOutline' : 'eyeOffOutline'" ></ion-icon>
               </ion-button>
             </ion-col>
             <ion-col size="1">
@@ -136,10 +136,14 @@ import {
 import {
   checkmarkCircleOutline,
   eyeOffOutline,
+  eyeOutline,
   refreshOutline,
   closeCircleOutline,
   removeCircleOutline,
 } from "ionicons/icons";
+
+import { mapMutations } from 'vuex';
+
 
 export default {
   name: "AddItemModal",
@@ -174,11 +178,14 @@ export default {
       closeCircleOutline,
       checkmarkCircleOutline,
       eyeOffOutline,
+      eyeOutline,
       refreshOutline,
       removeCircleOutline,
+      passwordType: "password"
     };
   },
   methods: {
+    ...mapMutations(['pushItem']),
     async closeModal() {
       await modalController.dismiss();
     },
@@ -187,7 +194,13 @@ export default {
       console.log(this.itemName);
       console.log(this.itemUsername);
       console.log(this.itemPassword);
-      console.log(this.itemAuthKey);
+
+      this.pushItem({
+        name: this.itemName,
+        username: this.itemUsername,
+        password: this.itemPassword
+      })
+
     },
   },
 };

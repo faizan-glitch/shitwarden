@@ -99,8 +99,8 @@ export default {
         });
     },
     navigateToTabs() {
-      this.$router.push('/tabs/vault')
-    }
+      this.$router.push("/tabs/vault");
+    },
   },
 };
 </script>

@@ -33,11 +33,11 @@
     </ion-list-header>
 
     <ion-list>
-      <ion-item v-for="item in items" :key="item">
+      <ion-item v-for="item in getItems" :key="item.name">
         <ion-icon slot="start" :icon="earthOutline"></ion-icon>
         <ion-col>
-          <ion-label class="small-margin-bottom">Application Name</ion-label>
-          <ion-label color="medium">Credentials</ion-label>
+          <ion-label class="small-margin-bottom">{{ item.name }}</ion-label>
+          <ion-label color="medium">{{ item.username}}</ion-label>
         </ion-col>
         <ion-icon :icon="openOutline" class="ion-margin-start"></ion-icon>
         <ion-icon
@@ -69,6 +69,7 @@ import {
   personCircleOutline,
   keyOutline,
 } from "ionicons/icons";
+import { mapGetters } from 'vuex';
 
 export default {
   name: "CategoriesMyVault",
@@ -90,9 +91,11 @@ export default {
       openOutline,
       personCircleOutline,
       keyOutline,
-      items: [1, 2, 3, 4],
     };
   },
+  computed: {
+    ...mapGetters(['getItems'])
+  }
 };
 </script>
 

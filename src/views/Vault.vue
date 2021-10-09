@@ -44,6 +44,9 @@ import AddItemModal from "@/components/AddItemModal.vue";
 // import ExploreContainer from "@/components/ExploreContainer.vue";
 import { addCircleOutline } from "ionicons/icons";
 
+import { mapGetters } from 'vuex';
+
+
 export default {
   name: "Vault",
   components: {
@@ -61,6 +64,9 @@ export default {
     CategoriesMyVault,
     AddItemModal,
   },
+  // beforeCreate() {
+  //   this.getItems()
+  // },
   data() {
     return {
       addCircleOutline,
@@ -68,6 +74,7 @@ export default {
     };
   },
   methods: {
+    ...mapGetters(['getItems']),
     setOpen(flag) {
       this.isOpenRef = flag;
     },

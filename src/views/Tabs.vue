@@ -8,12 +8,12 @@
           <ion-icon :icon="lockClosedOutline" />
           <ion-label>Vault</ion-label>
         </ion-tab-button>
-          
+
         <ion-tab-button tab="generator" href="/tabs/generator">
           <ion-icon :icon="createOutline" />
           <ion-label>Generator</ion-label>
         </ion-tab-button>
-        
+
         <ion-tab-button tab="settings" href="/tabs/settings">
           <ion-icon :icon="settingsOutline" />
           <ion-label>Settings</ion-label>
@@ -24,18 +24,38 @@
 </template>
 
 <script lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
-import { lockClosedOutline, createOutline, settingsOutline } from 'ionicons/icons';
+import {
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+  IonLabel,
+  IonIcon,
+  IonPage,
+  IonRouterOutlet,
+} from "@ionic/vue";
+import {
+  lockClosedOutline,
+  createOutline,
+  settingsOutline,
+} from "ionicons/icons";
 
 export default {
-  name: 'Tabs',
-  components: { IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage, IonRouterOutlet },
+  name: "Tabs",
+  components: {
+    IonLabel,
+    IonTabs,
+    IonTabBar,
+    IonTabButton,
+    IonIcon,
+    IonPage,
+    IonRouterOutlet,
+  },
   setup() {
     return {
-      lockClosedOutline, 
-      createOutline, 
-      settingsOutline
-    }
-  }
-}
+      lockClosedOutline,
+      createOutline,
+      settingsOutline,
+    };
+  },
+};
 </script>

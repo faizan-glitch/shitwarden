@@ -1,5 +1,12 @@
+
 const state = {
-    items: []
+    items: [
+        {
+            name: 'HEllo world',
+            username: "adsasd",
+            password: 'asdasd'
+        }
+    ]
 }
 
 
@@ -16,7 +23,6 @@ const actions = {
 
     // },
     // deleteItem: (state: any, data: any) => {
-
     // },
 }
 
