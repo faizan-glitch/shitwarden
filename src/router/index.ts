@@ -39,6 +39,10 @@ const routes: Array<RouteRecordRaw> = [
       {
         path: 'excluded-domains',
         component: () => import('@/views/ExcludedDomainsSettings.vue'),
+      },
+      {
+        path: 'item-view',
+        component: () => import('@/views/ItemView.vue'),
       }
     ]
   }

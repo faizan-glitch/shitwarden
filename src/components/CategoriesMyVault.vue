@@ -32,19 +32,20 @@
       <ion-label color="medium">UNCATEGORIZED</ion-label>
     </ion-list-header>
 
-    <ion-list>
+    <ion-list 
+          routerLink="/tabs/item-view">
       <ion-item v-for="item in getItems" :key="item.name">
         <ion-icon slot="start" :icon="earthOutline"></ion-icon>
         <ion-col>
           <ion-label class="small-margin-bottom">{{ item.name }}</ion-label>
-          <ion-label color="medium">{{ item.username}}</ion-label>
+          <ion-label color="medium">{{ item.username }}</ion-label>
         </ion-col>
         <ion-icon :icon="openOutline" class="ion-margin-start"></ion-icon>
         <ion-icon
           :icon="personCircleOutline"
           class="ion-margin-start"
         ></ion-icon>
-        <ion-icon :icon="keyOutline" class="ion-margin-start"></ion-icon>
+        <ion-icon @click="copyToClipboard(item.password)" :icon="keyOutline" class="ion-margin-start"></ion-icon>
       </ion-item>
     </ion-list>
   </div>
@@ -58,7 +59,8 @@ import {
   IonIcon,
   IonBadge,
   IonCol,
-  IonListHeader
+  IonListHeader,
+  toastController,
 } from "@ionic/vue";
 import {
   earthOutline,
@@ -70,6 +72,7 @@ import {
   keyOutline,
 } from "ionicons/icons";
 import { mapGetters } from 'vuex';
+import { Clipboard } from "@ionic-native/clipboard";
 
 export default {
   name: "CategoriesMyVault",
@@ -95,7 +98,22 @@ export default {
   },
   computed: {
     ...mapGetters(['getItems'])
-  }
+  },
+  methods: {
+    async copyToClipboard(itemPassword) {
+      try {
+        await Clipboard.copy(itemPassword);
+        const toast = await toastController
+        .create({
+          message: 'Password copied!',
+          duration: 2000
+        })
+      return toast.present();
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
 };
 </script>
 
