@@ -32,16 +32,18 @@
       <ion-label color="medium">UNCATEGORIZED</ion-label>
     </ion-list-header>
 
-    <ion-list 
-          routerLink="/tabs/item-view">
+    <ion-list>
       <ion-item v-for="item in getItems" :key="item.name">
         <ion-icon slot="start" :icon="earthOutline"></ion-icon>
-        <ion-col>
+        <ion-col button>
+        <router-link :to="{ name: 'item-view', params: {itemID: item.id } }">
           <ion-label class="small-margin-bottom">{{ item.name }}</ion-label>
           <ion-label color="medium">{{ item.username }}</ion-label>
+        </router-link>
         </ion-col>
         <ion-icon :icon="openOutline" class="ion-margin-start"></ion-icon>
         <ion-icon
+          @click="copyToClipboard(item.name)"
           :icon="personCircleOutline"
           class="ion-margin-start"
         ></ion-icon>
@@ -105,7 +107,7 @@ export default {
         await Clipboard.copy(itemPassword);
         const toast = await toastController
         .create({
-          message: 'Password copied!',
+          message: 'Copied to clipboard!',
           duration: 2000
         })
       return toast.present();

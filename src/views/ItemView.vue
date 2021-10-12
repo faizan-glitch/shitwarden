@@ -119,7 +119,8 @@ import {
   trashBinOutline,
 } from "ionicons/icons";
 
-import { mapMutations } from 'vuex';
+import { useRoute } from 'vue-router';
+import { mapGetters } from 'vuex';
 
 
 export default {
@@ -145,6 +146,8 @@ export default {
   },
   data() {
     return {
+      itemID: "",
+      item: "",
       itemTypeSelected: "",
       itemName: "",
       itemUsername: "",
@@ -160,8 +163,10 @@ export default {
       passwordType: "password"
     };
   },
+  computed: {
+    ...mapGetters(['getItemByID'])
+  },
   methods: {
-    ...mapMutations(['pushItem']),
     async closeModal() {
       await modalController.dismiss();
     },
@@ -173,6 +178,13 @@ export default {
       })
       this.closeModal;
     },
+  },
+  ionViewWillEnter() {
+    this.itemID = useRoute().params.itemID;
+    this.item = this.getItemByID(this.itemID);
+    this.itemName = this.item.name;
+    this.itemUsername = this.item.username;
+    this.itemPassword = this.item.password;
   },
 };
 </script>

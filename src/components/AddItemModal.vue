@@ -109,6 +109,9 @@
 </template>
 
 <script>
+
+import { v4 as uuidv4 } from 'uuid';
+
 import {
   IonPage,
   IonHeader,
@@ -191,11 +194,12 @@ export default {
     },
     saveItem() {
       this.pushItem({
+        id: uuidv4(),
         name: this.itemName,
         username: this.itemUsername,
         password: this.itemPassword
       })
-      this.closeModal;
+      this.closeModal();
     },
   },
 };

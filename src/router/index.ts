@@ -41,7 +41,8 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import('@/views/ExcludedDomainsSettings.vue'),
       },
       {
-        path: 'item-view',
+        name: 'item-view',
+        path: 'item-view/:itemID',
         component: () => import('@/views/ItemView.vue'),
       }
     ]

@@ -1,10 +1,10 @@
-
 const state = {
     items: [
         {
-            name: 'HEllo world',
-            username: "adsasd",
-            password: 'asdasd'
+            id: 0,
+            name: 'Hello World!',
+            username: "John Doe",
+            password: 'fubar'
         }
     ]
 }
@@ -12,7 +12,7 @@ const state = {
 
 const getters = {
     getItems: (state: any) => state.items,
-    getItemByName: (state: any) => (name: string) => state.items.find((item: any) => item.name == name) 
+    getItemByID: (state: any) => (id: string) => state.items.find((item: any) => item.id == id) 
 }
 
 const actions = {
