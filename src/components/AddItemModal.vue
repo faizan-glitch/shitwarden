@@ -102,7 +102,7 @@
       <ion-list>
         <ion-item class="dark-bg">
           <ion-textarea rows="8" cols="20" v-model="itemNote"></ion-textarea>
-        </ion-item>:auto-grow="true"
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-page>

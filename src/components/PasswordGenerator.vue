@@ -22,7 +22,6 @@
 
       <ion-item button @click="copyToClipboard">
         <ion-label>Copy Password</ion-label>
-        <!-- <ion-badge color="primary" class="ion-margin-end">69</ion-badge> -->
       </ion-item>
 
       <ion-item-divider></ion-item-divider>
@@ -79,6 +78,7 @@ import {
   IonCheckbox,
   IonItemDivider,
   IonTextarea,
+  toastController
 } from "@ionic/vue";
 import {
   earthOutline,
@@ -119,6 +119,11 @@ export default {
     async copyToClipboard() {
       try {
         await Clipboard.copy(this.generatedRandomPassword);
+         const toast = await toastController.create({
+          message: "Copied to clipboard!",
+          duration: 2000,
+        });
+        return toast.present();
       } catch (error) {
         console.log(error);
       }
