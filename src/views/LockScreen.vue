@@ -14,20 +14,25 @@
 
       <ion-card>
         <ion-card-header>
-          <ion-card-title>Enter your Pin Code</ion-card-title>
+          <!-- <ion-card-title>Enter your Pin Code</ion-card-title> -->
         </ion-card-header>
 
         <ion-card-content>
-          <ion-item lines="none">
-            <ion-label position="floating">Enter your Pin Code</ion-label>
+          <ion-item >
+            <ion-label position="stacked">Enter your Pin Code</ion-label>
             <ion-input type="number"></ion-input>
           </ion-item>
 
-          <ion-button @click="navigateToTabs">Login with PIN</ion-button>
-
-          <ion-button @click="authenticateWithFingerprint"
-            >Login with Fingerprint</ion-button
-          >
+          <ion-col>
+            <ion-row class="ion-justify-content-center">
+              <ion-button @click="navigateToTabs">Login with PIN</ion-button>
+            </ion-row>
+            <ion-row class="ion-justify-content-center ion-margin-top">
+              <ion-button @click="authenticateWithFingerprint">
+                <ion-icon :icon="fingerPrintOutline"></ion-icon>
+              </ion-button>
+            </ion-row>
+          </ion-col>
         </ion-card-content>
       </ion-card>
     </ion-content>
@@ -47,12 +52,15 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardTitle,
+  // IonCardTitle,
   IonButton,
+  IonCol,
+  IonRow,
+  IonIcon,
 } from "@ionic/vue";
 
 import { AndroidFingerprintAuth } from "@ionic-native/android-fingerprint-auth";
-
+import { fingerPrintOutline } from "ionicons/icons";
 export default {
   name: "LockScreen",
   components: {
@@ -67,12 +75,16 @@ export default {
     IonCard,
     IonCardContent,
     IonCardHeader,
-    IonCardTitle,
+    // IonCardTitle,
     IonButton,
+    IonCol,
+    IonRow,
+    IonIcon,
   },
   data() {
     return {
       faio: AndroidFingerprintAuth,
+      fingerPrintOutline,
     };
   },
   methods: {

@@ -28,10 +28,10 @@
         <ion-item>
           <ion-label color="medium">Type</ion-label>
           <ion-select v-model="itemTypeSelected">
-            <ion-select-option value="login">Login</ion-select-option>
-            <ion-select-option value="card">Card</ion-select-option>
-            <ion-select-option value="identity">Identity</ion-select-option>
-            <ion-select-option value="secureNote"
+            <ion-select-option value="Login">Login</ion-select-option>
+            <ion-select-option value="Card">Card</ion-select-option>
+            <ion-select-option value="Identity">Identity</ion-select-option>
+            <ion-select-option value="SecureNote"
               >Secure Note</ion-select-option
             >
           </ion-select>
@@ -51,7 +51,7 @@
          <ion-row class="ion-justify-content-around" style="width: 90%">
             <ion-col size="1">
               <ion-button @click="passwordType == 'password' ? passwordType = 'text': passwordType = 'password'">
-                <ion-icon :icon="passwordType == 'password' ? 'eyeOutline' : 'eyeOffOutline'" ></ion-icon>
+                <ion-icon  :icon="passwordType == 'password' ? eyeOutline : eyeOffOutline" ></ion-icon>
               </ion-button>
             </ion-col>
             <ion-col size="1">
@@ -91,7 +91,7 @@
 
         <ion-item>
           <ion-label>Favourite</ion-label>
-          <ion-checkbox color="primary"></ion-checkbox>
+          <ion-checkbox color="primary" v-model="itemFavourite"></ion-checkbox>
         </ion-item>
 
       </ion-list>
@@ -101,8 +101,8 @@
       </ion-list-header>
       <ion-list>
         <ion-item class="dark-bg">
-          <ion-textarea rows="8" cols="20" :auto-grow="true"></ion-textarea>
-        </ion-item>
+          <ion-textarea rows="8" cols="20" v-model="itemNote"></ion-textarea>
+        </ion-item>:auto-grow="true"
       </ion-list>
     </ion-content>
   </ion-page>
@@ -174,10 +174,13 @@ export default {
   },
   data() {
     return {
-      itemTypeSelected: "",
+      itemTypeSelected: "Login",
       itemName: "",
       itemUsername: "",
       itemPassword: "",
+      itemURLs: [],
+      itemFavourite: false,
+      itemNote: "",
       closeCircleOutline,
       checkmarkCircleOutline,
       eyeOffOutline,
@@ -197,7 +200,11 @@ export default {
         id: uuidv4(),
         name: this.itemName,
         username: this.itemUsername,
-        password: this.itemPassword
+        password: this.itemPassword,
+        type: this.itemTypeSelected,
+        urls: this.itemURLs,
+        favourite: this.itemFavourite,
+        note: this.itemNote
       })
       this.closeModal();
     },

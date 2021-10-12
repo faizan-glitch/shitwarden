@@ -1,11 +1,14 @@
 const state = {
     items: [
-        {
-            id: 0,
-            name: 'Hello World!',
-            username: "John Doe",
-            password: 'fubar'
-        }
+        // {
+        //     id: 0,
+        //     name: 'Hello World!',
+        //     username: "John Doe",
+        //     password: 'fubar',
+        //     type: 'login',
+        //     urls: ['https://example.com'],
+        //     note: 'HElloawe apowje '
+        // }
     ]
 }
 
