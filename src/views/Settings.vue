@@ -68,7 +68,7 @@
           <ion-checkbox color="primary"></ion-checkbox>
         </ion-item>
 
-        <ion-item :detail="true">
+        <ion-item :detail="true" router-direction="back" @click="$router.push('/')">
           <ion-label>Lock Now</ion-label>
         </ion-item>
 
@@ -89,7 +89,7 @@
           <ion-label>Fingerprint Phase</ion-label>
         </ion-item>
 
-        <ion-item :detail="true">
+        <ion-item :detail="true" router-direction="back" @click="$router.push('/')">
           <ion-label>Log Out</ion-label>
         </ion-item>
       </ion-list>

@@ -189,7 +189,7 @@ export default {
 
             const { role } = await actionSheet.onDidDismiss();
           }
-        }, 500);
+        }, 600);
       }
     },
   },

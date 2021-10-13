@@ -121,6 +121,7 @@ export default {
          const toast = await toastController.create({
           message: "Copied to clipboard!",
           duration: 2000,
+          color: 'primary'
         });
         return toast.present();
       } catch (error) {
