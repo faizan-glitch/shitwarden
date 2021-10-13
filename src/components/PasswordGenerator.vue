@@ -6,11 +6,10 @@
     <ion-list>
       <ion-item class="dark-bg">
         <ion-textarea
-          rows="1"
+          rows="5"
           cols="20"
           placeholder="Random Password"
           :value="generatedRandomPassword"
-          :auto-grow="true"
           readonly
           class="ion-text-center"
         ></ion-textarea>
@@ -158,7 +157,7 @@ export default {
 </script>
 
 <style>
-.dark-bg {
+/* .dark-bg {
   --background: #2e2e2e;
-}
+} */
 </style>

@@ -1,7 +1,9 @@
 <template>
   <ion-page>
     <ion-tabs>
-      <ion-router-outlet></ion-router-outlet>
+      <!-- <keep-alive max="5"> -->
+      <ion-router-outlet :key="$route.fullPath"></ion-router-outlet>
+      <!-- </keep-alive> -->
       <!-- eslint-disable -->
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="vault" href="/tabs/vault">
