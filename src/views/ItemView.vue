@@ -1,4 +1,4 @@
-<template>
+<template >
   <ion-page>
     <!-- eslint-disable -->
     <ion-header>

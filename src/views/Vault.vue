@@ -2,13 +2,13 @@
   <ion-page>
     <ion-header>
       <ion-toolbar>
-        <ion-searchbar
+        <!-- <ion-searchbar
           mode="ios"
           class="ion-margin-top"
-        ></ion-searchbar>
+        ></ion-searchbar> -->
         <!-- eslint-disable -->
-        <ion-buttons slot="end">
-          <ion-button @click="setOpen(true)" class="ion-margin-horizontal">
+        <ion-buttons slot="end" class="ion-margin-top">
+          <ion-button @click="setOpen(true)" class="ion-margin-top">
             <ion-icon :icon="addCircleOutline" />
           </ion-button>
         </ion-buttons>
@@ -19,6 +19,10 @@
         <ion-toolbar>
           <ion-title size="large">Vault</ion-title>
         </ion-toolbar>
+         <ion-searchbar
+          mode="ios"
+          class="ion-margin-top"
+        ></ion-searchbar>
       </ion-header>
       <ion-modal :is-open="isOpenRef" @didDismiss="setOpen(false)">
         <add-item-modal />

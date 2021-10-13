@@ -18,15 +18,16 @@ const routes: Array<RouteRecordRaw> = [
       },
       {
         path: 'vault',
-        component: () => import('@/views/Vault.vue')
+        component: () => import('@/views/Vault.vue'),
+       
       },
       {
         path: 'generator',
-        component: () => import('@/views/Generator.vue')
+        component: () => import('@/views/Generator.vue'),
       },
       {
         path: 'settings',
-        component: () => import('@/views/Settings.vue'),
+        component: () => import( '@/views/Settings.vue'),
       },
       {
         path: 'folders',

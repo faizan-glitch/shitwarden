@@ -38,7 +38,7 @@
         </ion-item>
         <ion-item>
           <ion-label position="floating" color="medium">Name</ion-label>
-          <ion-input v-model="itemName"></ion-input>
+          <ion-input v-model="itemName" autocapitalize="sentences"></ion-input>
         </ion-item>
         <ion-item>
           <ion-label position="floating" color="medium">Username</ion-label>
@@ -198,13 +198,13 @@ export default {
     saveItem() {
       this.pushItem({
         id: uuidv4(),
-        name: this.itemName,
-        username: this.itemUsername,
-        password: this.itemPassword,
-        type: this.itemTypeSelected,
+        name: this.itemName.trim(),
+        username: this.itemUsername.trim(),
+        password: this.itemPassword.trim(),
+        type: this.itemTypeSelected.trim(),
         urls: this.itemURLs,
         favourite: this.itemFavourite,
-        note: this.itemNote
+        note: this.itemNote.trim()
       })
       this.closeModal();
     },

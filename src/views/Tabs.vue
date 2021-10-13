@@ -1,22 +1,20 @@
 <template>
   <ion-page>
     <ion-tabs>
-      <!-- <keep-alive max="5"> -->
-      <ion-router-outlet :key="$route.fullPath"></ion-router-outlet>
-      <!-- </keep-alive> -->
+      <ion-router-outlet></ion-router-outlet>
       <!-- eslint-disable -->
       <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="vault" href="/tabs/vault">
+        <ion-tab-button tab="vault" href="/tabs/vault" >
           <ion-icon :icon="lockClosedOutline" />
           <ion-label>Vault</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="generator" href="/tabs/generator">
+        <ion-tab-button tab="generator" href="/tabs/generator" >
           <ion-icon :icon="createOutline" />
           <ion-label>Generator</ion-label>
         </ion-tab-button>
 
-        <ion-tab-button tab="settings" href="/tabs/settings">
+        <ion-tab-button tab="settings" href="/tabs/settings" >
           <ion-icon :icon="settingsOutline" />
           <ion-label>Settings</ion-label>
         </ion-tab-button>
